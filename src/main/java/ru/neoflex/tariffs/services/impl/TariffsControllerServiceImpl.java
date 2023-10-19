@@ -90,6 +90,8 @@ public class TariffsControllerServiceImpl implements TariffsControllerService {
 
     @Override
     public List<TariffResponse> getVersionForCertainPeriod(UUID id, LocalDate startDate, LocalDate endDate) {
+        tariffService.findById(id)
+                .orElseThrow(() -> new NotFoundException(String.format("Tariff with id %s not found", id)));
         List<Tariff> tariffs = auditService.getVersionForCertainPeriod(id, startDate, endDate);
         return tariffs.stream().map(tariffMapper::tariffToTariffDto).toList();
     }
