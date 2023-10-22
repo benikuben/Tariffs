@@ -41,7 +41,7 @@ public interface TariffsAPI {
     )
     ResponseEntity<TariffResponse> getCurrentVersion(@PathVariable("id") UUID id);
 
-    @PostMapping()
+    @PostMapping
     @Operation(
             summary = "Create",
             responses = {
