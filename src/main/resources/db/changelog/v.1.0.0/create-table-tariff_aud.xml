@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+
+    <changeSet id="create-table-tariff_aud" author="Veronika Kulieva">
+        <createTable tableName="tariff_aud">
+            <column name="id" type="uuid">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="rev" type="integer">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="revtype" type="SMALLINT"/>
+            <column name="name" type="varchar(50)"/>
+            <column name="start_date" type="date"/>
+            <column name="end_date" type="date"/>
+            <column name="description" type="text"/>
+            <column name="rate" type="double"/>
+            <column name="version" type="integer"/>
+        </createTable>
+
+        <addForeignKeyConstraint baseTableName="tariff_aud" baseColumnNames="rev"
+                                 constraintName="tariff_aud_rev_revinfo_id"
+                                 referencedTableName="revinfo" referencedColumnNames="id" />
+
+        <rollback>
+            <dropTable tableName="tariff_aud"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>
