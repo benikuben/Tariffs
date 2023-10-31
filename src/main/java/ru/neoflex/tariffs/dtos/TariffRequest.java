@@ -21,7 +21,7 @@ public class TariffRequest {
     @NotNull(message = "Start date must not be null")
     @Schema(
             description = "start date",
-            name = "start date",
+            name = "startDate",
             example = "2000-01-01"
     )
     private LocalDate startDate;
@@ -29,7 +29,7 @@ public class TariffRequest {
     @NotNull(message = "End date must not be null")
     @Schema(
             description = "end date",
-            name = "end date",
+            name = "endDate",
             example = "2001-01-01"
     )
     private LocalDate endDate;

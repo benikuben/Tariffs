@@ -1,4 +1,4 @@
-package ru.neoflex.tariffs.services.impl;
+package ru.neoflex.tariffs.services;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -9,7 +9,7 @@ import ru.neoflex.tariffs.dtos.TariffRequest;
 import ru.neoflex.tariffs.exceptions.NotFoundException;
 import ru.neoflex.tariffs.exceptions.TariffsException;
 import ru.neoflex.tariffs.models.Tariff;
-import ru.neoflex.tariffs.services.TariffService;
+import ru.neoflex.tariffs.services.impl.TariffsControllerServiceImpl;
 import ru.neoflex.tariffs.util.mappers.TariffMapper;
 
 import java.time.LocalDate;

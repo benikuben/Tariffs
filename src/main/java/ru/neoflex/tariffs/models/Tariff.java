@@ -17,7 +17,6 @@ import java.util.UUID;
 @NoArgsConstructor
 @Audited
 @AuditTable("tariff_aud")
-
 @EqualsAndHashCode(exclude = "version")
 public class Tariff {
     @Id
